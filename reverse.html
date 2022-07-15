@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>反轉你的話</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  
+  body {
+    background: rgb(165, 165, 165);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #container {
+    background: paleturquoise;
+    padding: 2rem;
+    border: 2px solid #855E42;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #container > * {
+    margin: 1rem !important;
+  }
+  #container > input {
+    font-size: 64px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
+
+  #container > button {
+    font-size: 48px;
+    width: 50%;
+    background: rgb(106, 194, 106);
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: .5s;
+  }
+
+  #container > button:hover {
+    background: rgb(49, 161, 49);
+    transition: .5s;
+  }
+
+  #container > button:focus {
+    background: rgb(49, 161, 49);
+  }
+
+  #container > p {
+    font-size: 64px;
+    background: #a88064;
+    color: white;
+    padding: 2rem;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: .5s;
+  }
+
+  #container > p:hover {
+    background: #855E42;
+    transition: .5s;
+  }
+
+  #reversedDone {
+    font-size: 36px;
+    color: red;
+  }
+
+</style>
+
+<body>
+  <div id="container">
+    <input id="string"></input>
+    <button onclick="reversed()">反轉</button>
+    <p id="revrseStr">反轉結果將顯示於這裡</p>
+    <div id="reversedDone"></div>
+  </div>
+</body>
+
+<script>
+  function reversed() {
+    const str = document.getElementById('string').value
+    const reversed = str.split('').reverse().join('')
+    document.getElementById('revrseStr').innerText = reversed
+    document.getElementById('reversedDone').innerText = '已轉換完成。'
+  }
+
+  addEventListener("keyup", function(e) {
+    if (e.keyCode === 13) {
+      const str = document.getElementById('string').value
+      const reversed = str.split('').reverse().join('')
+      document.getElementById('revrseStr').innerText = reversed
+      document.getElementById('reversedDone').innerText = '已轉換完成。'
+    }
+  })
+  
+</script>
+</html>

@@ -1,14 +1,17 @@
 const string = document.getElementById('string')
-const reverseStr = document.getElementById('revrseStr')
+const reverseStr = document.getElementById('reverseStr')
 const reversedDone = document.getElementById('reversedDone')
 const reversedBtn = document.getElementById('reversedBtn')
 
 function reversed() {
+  const original = string.value.split('').reverse().join('')
+
   if (string.value != '') {
-    const original = string.value.split('').reverse().join('')
     reverseStr.innerText = original
     reversedDone.innerText = '已轉換完成。'
-  } else {
+  }
+
+  if (string.value === '') {
     reverseStr.classList.add('error')
     reversedBtn.classList.add('disable')
     reverseStr.innerText = '請輸入文字。'
@@ -19,11 +22,14 @@ function reversed() {
 
 window.addEventListener("keyup", function(e) {
   if ( e.keyCode === 13 ) {
+    const original = string.value.split('').reverse().join('')
+    
     if (string.value != '') {
-      const original = string.value.split('').reverse().join('')
       reverseStr.innerText = original
       reversedDone.innerText = '已轉換完成。'
-    } else {
+    }
+
+    if (string.value === '') {
       reverseStr.classList.add('error')
       reversedBtn.classList.add('disable')
       reverseStr.innerText = '請輸入文字。'

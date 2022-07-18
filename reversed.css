@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Noto Sans TC", sans-serif;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 body {
@@ -24,17 +24,19 @@ body {
   align-items: center;
   flex-direction: column;
 }
-#container * {
+
+#container > * {
   margin: 1rem !important;
 }
-#container #string {
+#container > input {
   width: 80%;
   font-size: 64px;
   border: 1px solid black;
   border-radius: 10px;
   padding: 0.5rem;
 }
-#container #reversedBtn {
+
+#reversedBtn {
   font-size: 48px;
   width: 50%;
   background: rgb(88, 182, 88);
@@ -42,16 +44,24 @@ body {
   border-radius: 10px;
   cursor: pointer;
   color: white;
-  transition: 0.5s;
+  transition: .5s;
 }
-#container #reversedBtn:hover {
+
+#reversedBtn:hover {
   background: rgb(49, 161, 49);
-  transition: 0.5s;
+  transition: .5s;
 }
-#container #reversedBtn:focus {
+
+#reversedBtn:focus {
   background: rgb(49, 161, 49);
 }
-#container #reverseStr {
+
+.disable {
+  cursor: not-allowed !important;
+  filter: opacity(0.5);
+}
+
+#container > p {
   width: 80%;
   word-wrap: break-word;
   font-size: 64px;
@@ -60,51 +70,11 @@ body {
   padding: 2rem;
   border: 2px solid white;
   border-radius: 10px;
-  transition: 0.5s;
-}
-#container #reverseStr:hover {
-  background: #855E42;
-  transition: 0.5s;
-}
-#container #reversedDone {
-  font-size: 36px;
-  color: red;
-}
-#container #clear {
-  font-size: 48px;
-  width: 50%;
-  background: rgb(243, 112, 112);
-  border: 2px solid white;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  transition: 0.5s;
-}
-#container #clear:hover {
-  background: rgb(247, 44, 44);
-  transition: 0.5s;
-}
-#container #clear:focus {
-  background: rgb(247, 44, 44);
-}
-
-.disable {
-  cursor: not-allowed !important;
-  filter: opacity(0.5);
+  transition: .5s;
 }
 
 .error {
-  -webkit-animation: shine 1s ease;
-          animation: shine 1s ease;
-}
-
-@-webkit-keyframes shine {
-  0% {
-    background: rgb(238, 85, 85);
-  }
-  100% {
-    background: #a88064;
-  }
+  animation: shine 1s ease;
 }
 
 @keyframes shine {
@@ -114,4 +84,34 @@ body {
   100% {
     background: #a88064;
   }
-}/*# sourceMappingURL=reverse.css.map */
+}
+
+#container > p:hover {
+  background: #855E42;
+  transition: .5s;
+}
+
+#reversedDone {
+  font-size: 36px;
+  color: red;
+}
+
+#clear {
+  font-size: 48px;
+  width: 50%;
+  background: rgb(243, 112, 112);
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: .5s;
+}
+
+#clear:hover {
+  background: rgb(247, 44, 44);
+  transition: .5s;
+}
+
+#clear:focus {
+  background: rgb(247, 44, 44);
+}
